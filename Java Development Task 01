@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Student {
+    public static void main (String args[]){
+        Scanner adeel= new Scanner(System.in);
+    System.out.print(" Enter Number of Student : ");
+    int number = adeel.nextInt();
+    double grade[]= new double[number];
+    double sum=0;
+    double highest=0;
+    double lowest=0;
+        System.out.println();
+    for(int num = 0; num<number; num++){
+        System.out.print(" Enter Number "+(num+1)+":");
+        grade[num]=adeel.nextInt();}
+
+     for(int num2=0; num2<number; num2++){
+         sum+=grade[num2];
+         if (grade[num2]>highest){
+             highest=grade[num2];}
+
+         if (grade[num2]<lowest){
+             lowest=grade[num2];}}
+     double averge= sum/number;
+        System.out.println(" Average Grades "+ averge);
+        System.out.println(" Highest Grade "+ highest);
+        System.out.println(" Lowest Grade "+ lowest);
+    }}
