@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+public class Application {
+    static Scanner adeel = new Scanner(System.in);
+    public void createAccount() {
+        System.out.println("\t\t\t>>>>>>>>>>Create Account>>>>>>>>>>");
+        System.out.print("Enter Your Mobile Number:");
+        int mobileNum=adeel.nextInt();
+        adeel.nextLine();
+        System.out.print("Enter Your Name\t\t\t:");
+        String name= adeel.nextLine();
+        System.out.print("Keep Password\t\t\t:");
+        int password=adeel.nextInt();
+        adeel.nextLine();
+        System.out.println("Your account has been successfully created.");}
+        public void depositeBalance() {
+        System.out.println("\t\t\t>>>>>>>>>>Deposite Balance>>>>>>>>>>");
+        System.out.print("Enter Amount to Deposit:");
+        double amount= adeel.nextDouble();
+        balance+=amount;
+        System.out.println("Amount Deposited Successfully!!!");}
+
+
+        public void withdrawBalance() {
+        System.out.println("\t\t\t>>>>>>>>>>Withdraw Balance>>>>>>>>>>");
+        System.out.print("Enter Amount to Withdraw:");
+        double withdrawAmount=adeel.nextDouble();
+        if(withdrawAmount>balance){
+            System.out.println("Insufficient Balance...");}
+        else{
+            balance-=withdrawAmount;
+            System.out.println("Amount Withdraw Successfully!!!");}}
+
+        public void checkingBalance() {
+        System.out.println("\t\t\t>>>>>>>>>>Chechking Balance>>>>>>>>>");
+        System.out.println("Your Available Balance is: "+balance);}
+
+        public void exitSystem() {
+        System.out.println();}
+        double balance = 0;
+        public static void main(String args[]) {
+        Application myObj = new Application();
+        System.out.println("\n\t\t\t>>>>>>>>>>>>>>>>>>Welcome to Simple Banking System>>>>>>>>>>>>>>>>>>>");
+        System.out.println("1:Create Account");
+        System.out.println("2:Deposite Balance");
+        System.out.println("3:Withdraw Balance ");
+        System.out.println("4:Checking Balance");
+        System.out.println("5:Exit Program");
+        int choice;
+        do {
+            System.out.print("\nSelect Any Option:");
+            choice = adeel.nextInt();
+            switch (choice) {
+                case 1:
+                    myObj.createAccount();
+                    break;
+                case 2:
+                    myObj.depositeBalance();
+                    break;
+                case 3:
+                    myObj.withdrawBalance();
+                    break;
+                case 4:
+                    myObj.checkingBalance();
+                    break;
+                case 5:
+                    myObj.exitSystem();
+                    System.out.println("\t\t\t>>>>>>>>>>>>>>>Thank You Using for Simple Banking System>>>>>>>>>>>>>>");
+
+                    break;
+            }} while (choice != 5);}}
+
